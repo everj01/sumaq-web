@@ -72,23 +72,17 @@ const RegisterModal: React.FC<Props> = ({isOpen, onClose, onSwitch}) => {
     <>
     {contextHolder}
       <Modal 
-      titleModal="Bienvenido(a), unete a esta gran comunidad"
+      titleModal="Bienvenido(a) a esta gran comunidad"
       isOpen={isOpen}
       onClose={onClose}
       onSwitch={onSwitch}
       size="xl"
       >
-        <div className="grid grid-cols-[1fr] lg:grid-cols-[490px_1fr] gap-3 p-3 ">
-          <div className="flex items-center justify-center py-10 w-full">
-            <img
-              src="banner_register.svg"
-              alt="register"
-              className="w-[69%]"
-            />
-          </div>
+      
+          
 
           
-          <div className="w-full  px-8">
+          <div className="w-full px-8">
             <div className="flex flex-col items-center justify-center gap-5 mb-5">
               <button
                 type="button"
@@ -105,10 +99,10 @@ const RegisterModal: React.FC<Props> = ({isOpen, onClose, onSwitch}) => {
             <Form
             form={form}
             layout="vertical"
-            className="" 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-x-3 gap-y-2 w-full px-5"
             >
-              <div className="grow max-h-[500px] grid grid-cols-1 lg:grid-cols-2 gap-x-3 gap-y-0 w-full  px-5 overflow-y-auto">
-                
+
+              
                 <Form.Item 
                 label="Nombres" 
                 name="name"
@@ -215,8 +209,7 @@ const RegisterModal: React.FC<Props> = ({isOpen, onClose, onSwitch}) => {
                 rules={[{ required: true, message: 'Porfavor ingrese ua contraseña válida' }]}>
                   <Input.Password maxLength={12} />
                 </Form.Item>
-              </div>
-
+            
               <div className="flex items-center justify-center align-middle col-span-2 mb-6 mt-5">
                 <hr className="w-[487px] border-gray-200 mt-1"/>
               </div>
@@ -226,7 +219,6 @@ const RegisterModal: React.FC<Props> = ({isOpen, onClose, onSwitch}) => {
               </Form.Item>
             </Form>
           </div>
-        </div>
       </Modal>
     </>
   );

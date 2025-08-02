@@ -2,7 +2,6 @@ import React from "react";
 import Modal from "./Modal";
 import { Button, DatePicker, Form, Input, message, Upload, Radio  } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
-import axios from "axios";
 
 type Props = {
   isOpen: boolean;

@@ -32,7 +32,8 @@ const Modal: React.FC<Props>  = ({titleModal, isOpen, onClose, size, onSwitch: _
   return(
     <>
       <div 
-      className={`modal-backdrop ${ animating  ? "opacity-100" : "opacity-0 pointer-events-none" }`}>
+      className={`fixed inset-0 text-gray-800 z-50 bg-black/50  flex items-center justify-center transition-opacity duration-200 w-full 
+      ${ animating  ? "opacity-100" : "opacity-0 pointer-events-none" }`}>
         <div className={`bg-white rounded-2xl shadow-lg p-8 relative transform transition-all duration-200 w-[80%] max-h-[90vh] overflow-hidden grow ${
           size === 'sm' ? 'max-w-sm' :
           size === 'md' ? 'max-w-md' :
@@ -41,15 +42,15 @@ const Modal: React.FC<Props>  = ({titleModal, isOpen, onClose, size, onSwitch: _
           'max-w-xl'  
         } ${ animating  ? "scale-100 translate-y-0" : "scale-95 translate-y-2" }`}>
           <button
-            className="modal-btn-close"
-            onClick={onClose}
+          className="modal-btn-close"
+          onClick={onClose}
           >
             &times;
           </button>
           <h2 className="modal-title">
             {titleModal}
           </h2>
-          <div className="max-h-[80vh] overflow-y-auto px-6 py-4">
+          <div className="max-h-[80vh] overflow-y-auto overflow-x-hidden px-3 py-4">
             { children }
           </div>
         </div>

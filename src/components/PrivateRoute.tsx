@@ -1,10 +1,11 @@
-import { Navigate, Outlet } from "react-router-dom";
+// src/components/PrivateRoute.tsx
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
-const isAuthenticated = (): boolean => {
-  // Aquí decides tu lógica real de sesión (ejemplo: token en localStorage)
-  return !!localStorage.getItem("auth_token_user");
+const PrivateRoute = () => {
+  const { isAuthenticated } = useAuth();
+
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
-export default function PrivateRoute() {
-  return isAuthenticated() ? <Outlet /> : <Navigate to="/login" replace />;
-}
+export default PrivateRoute;
